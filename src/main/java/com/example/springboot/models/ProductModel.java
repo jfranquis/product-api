@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.persistence.*;
 
 
@@ -13,7 +15,7 @@ import jakarta.persistence.*;
 @Table(name = "tb_product")
 
 // Serializable = é uma interface (marcação) que serve para que os objetos daclasse possam ser convertidos em uma sequência de bytes
-public class ProductModel implements Serializable {
+public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
     private static final long serialVersionUID = 1L; // numero de controle de versão enviada de um objeto seja compatível com a versão recebida.
 
     //atributos
